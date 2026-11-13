@@ -21,7 +21,8 @@ class CarInterface(CarInterfaceBase):
   CarController = CarController
   RadarInterface = RadarInterface
 
-  DRIVABLE_GEARS = (structs.CarState.GearShifter.sport,)
+  # brake is the hybrids' "B" position (held regeneration). Honda's own ACC works in D or B.
+  DRIVABLE_GEARS = (structs.CarState.GearShifter.sport, structs.CarState.GearShifter.brake)
 
   @staticmethod
   def get_pid_accel_limits(CP, CP_SP, current_speed, cruise_speed):
